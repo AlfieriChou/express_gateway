@@ -1,0 +1,56 @@
+http:
+  port: 8080
+admin:
+  port: 9876
+  hostname: localhost
+apiEndpoints:
+  api:
+    host: localhost
+    paths: '/users/1'
+  api2:
+    host: localhost
+    paths: '/addresses/1'
+serviceEndpoints:
+  httpbin:
+    url: 'https://admin.knex.alfierichou.com'
+  httpbin2:
+    url: 'https://knex.alfierichou.com'
+policies:
+  - basic-auth
+  - cors
+  - expression
+  - key-auth
+  - log
+  - oauth2
+  - proxy
+  - rate-limit
+  - customlogger
+pipelines:
+  default:
+    apiEndpoints:
+      - api
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - log:
+          - action:
+              message: ${req.method} ${req.originalUrl}
+      - customlogger:
+      - proxy:
+          - action:
+              serviceEndpoint: httpbin
+              changeOrigin: true
+  test:
+    apiEndpoints:
+      - api2
+    policies:
+    # Uncomment `key-auth:` when instructed to in the Getting Started guide.
+    # - key-auth:
+      - log:
+          - action:
+              message: ${req.method} ${req.originalUrl}
+      - customlogger:
+      - proxy:
+          - action:
+              serviceEndpoint: httpbin2
+              changeOrigin: true

@@ -1,0 +1,32 @@
+{
+  "_from": "express-gateway-plugin-customlogger@^1.1.1",
+  "_id": "express-gateway-plugin-customlogger@1.1.1",
+  "_inBundle": false,
+  "_integrity": "sha512-M/7d7/R6Axj702CPphD8f2Zc0IzsvaS/egMqgdAUrg6uNVUJhGzfpuWlzeU6LI/0o4hPuxku74+XLQN3BQguvQ==",
+  "_location": "/express-gateway-plugin-customlogger",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "range",
+    "registry": true,
+    "raw": "express-gateway-plugin-customlogger@^1.1.1",
+    "name": "express-gateway-plugin-customlogger",
+    "escapedName": "express-gateway-plugin-customlogger",
+    "rawSpec": "^1.1.1",
+    "saveSpec": null,
+    "fetchSpec": "^1.1.1"
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "https://registry.npmjs.org/express-gateway-plugin-customlogger/-/express-gateway-plugin-customlogger-1.1.1.tgz",
+  "_shasum": "c568fd4fe53e05f8c0da69e022b45d5a096c119d",
+  "_spec": "express-gateway-plugin-customlogger@^1.1.1",
+  "_where": "/opentest/gateway/test/gatewaygateway",
+  "bundleDependencies": false,
+  "deprecated": false,
+  "license": "Apache-2.0",
+  "main": "manifest.js",
+  "name": "express-gateway-plugin-customlogger",
+  "version": "1.1.1"
+}

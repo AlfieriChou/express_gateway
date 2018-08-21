@@ -1,0 +1,20 @@
+{
+  "name": "gatewaygateway",
+  "description": "Express Gateway Instance Bootstraped from Command Line",
+  "repository": {},
+  "license": "UNLICENSED",
+  "version": "1.0.0",
+  "main": "server.js",
+  "dependencies": {
+    "continuation-local-storage": "^3.2.1",
+    "express-gateway": "^1.11.0",
+    "express-gateway-plugin-customlogger": "file:express-gateway-plugin-customlogger"
+  },
+  "scripts": {
+    "start": "node server.js",
+    "lint": "standard --fix"
+  },
+  "devDependencies": {
+    "standard": "^11.0.1"
+  }
+}
