@@ -1,8 +1,11 @@
 # Core
 db:
   redis:
-    emulate: true
+    emulate: false
     namespace: EG
+    host: '47.106.84.59'
+    port: '6379'
+    password: 'yangzong'
 
 #plugins:
   # express-gateway-plugin-example:
@@ -28,3 +31,9 @@ authorizationCodes:
 plugins:
   customlogger:
     package: express-gateway-plugin-customlogger
+  jwt:
+    package: express-gateway-plugin-jwt
+    secret: a093d64d32
+
+cli:
+  url: http://localhost:9876

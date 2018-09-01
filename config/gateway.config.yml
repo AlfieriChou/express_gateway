@@ -6,15 +6,23 @@ admin:
 apiEndpoints:
   api:
     host: localhost
-    paths: '/users/1'
+    paths: '/cards'
   api2:
     host: localhost
     paths: '/addresses/1'
+  auth:
+    host: localhost
+    paths: '/auth'
+  basic:
+    host: localhost
+    paths: '/users/1'
 serviceEndpoints:
   httpbin:
     url: 'https://admin.knex.alfierichou.com'
   httpbin2:
     url: 'https://knex.alfierichou.com'
+  auth:
+    url: 'http://localhost:7000'
 policies:
   - basic-auth
   - cors
@@ -25,6 +33,7 @@ policies:
   - proxy
   - rate-limit
   - customlogger
+  - jwt
 pipelines:
   default:
     apiEndpoints:
@@ -46,10 +55,42 @@ pipelines:
     policies:
     # Uncomment `key-auth:` when instructed to in the Getting Started guide.
     # - key-auth:
+      # - key-auth:
+      #     - action:
+      #         apiKeyHeader: hahahahaha
+      #         disableHeadersSchema: true
+      - rate-limit:
+          - action:
+              max: 1
+              windowMs: 120000
+              rateLimitBy: "${req.hostname}"
       - log:
           - action:
               message: ${req.method} ${req.originalUrl}
       - customlogger:
+      - proxy:
+          - action:
+              serviceEndpoint: httpbin2
+              changeOrigin: true
+  auth:
+    apiEndpoints:
+      - auth
+    policies:
+      - jwt:
+          - action:
+              secret: 'a093d64d32'
+      - proxy:
+          - action:
+              serviceEndpoint: auth
+              changeOrigin: true
+  basic:
+    apiEndpoints:
+      - basic
+    policies:
+      - key-auth:
+          - actions:
+              apiKeyHeader: 676NGDhwxjT1TzbL7D0AIA:0IXqzAN2fWTGhPHVkUKJza
+              disableHeadersScheme: true
       - proxy:
           - action:
               serviceEndpoint: httpbin2

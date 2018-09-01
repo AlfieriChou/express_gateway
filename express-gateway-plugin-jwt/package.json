@@ -1,0 +1,37 @@
+{
+  "_from": "github:renatoramiro/express-gateway-plugin-jwt",
+  "_id": "express-gateway-plugin-jwt@1.0.1",
+  "_inBundle": false,
+  "_integrity": "",
+  "_location": "/express-gateway-plugin-jwt",
+  "_phantomChildren": {},
+  "_requested": {
+    "type": "git",
+    "raw": "renatoramiro/express-gateway-plugin-jwt",
+    "rawSpec": "renatoramiro/express-gateway-plugin-jwt",
+    "saveSpec": "github:renatoramiro/express-gateway-plugin-jwt",
+    "fetchSpec": null,
+    "gitCommittish": null
+  },
+  "_requiredBy": [
+    "#USER",
+    "/"
+  ],
+  "_resolved": "github:renatoramiro/express-gateway-plugin-jwt#23f9988f4d13f0ccb51bb31133aaf3f9ce46cf32",
+  "_spec": "renatoramiro/express-gateway-plugin-jwt",
+  "_where": "/opentest/gateway/test/gatewaygateway",
+  "author": "",
+  "bundleDependencies": false,
+  "dependencies": {
+    "jsonwebtoken": "^8.1.0"
+  },
+  "deprecated": false,
+  "description": "Plugin Example for Express Gateway",
+  "license": "Apache-2.0",
+  "main": "manifest.js",
+  "name": "express-gateway-plugin-jwt",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.0.1"
+}
