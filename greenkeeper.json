@@ -1,0 +1,11 @@
+{
+  "groups": {
+    "default": {
+      "packages": [
+        "express-gateway-plugin-customlogger/package.json",
+        "express-gateway-plugin-jwt/package.json",
+        "package.json"
+      ]
+    }
+  }
+}
